@@ -2,23 +2,14 @@ import Image from "next/image";
 import SearchForm from "@/components/SearchForm";
 import { promises } from "dns";
 import StartupCard from "@/components/StartupCard";
+import { client } from "@/sanity/lib/client";
+import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 
 export default async function Home({searchParams}:{searchParams:Promise<{query?:string}>}) {
   
   const query=(await searchParams).query
 
-  const posts=[
-    {
-      _createdAt:new Date(),
-      views:55,
-      author:{_id:1,name:"dev prajapati"},
-      _id:1,
-       description:'This is a description',
-       image:"https://www.kasandbox.org/programming-images/avatars/mr-pants-purple.png",
-       category:"Robots",
-       title:"We Robots",
-    },
-  ]
+  const posts=await client.fetch(STARTUPS_QUERY);
 
 
   return (
