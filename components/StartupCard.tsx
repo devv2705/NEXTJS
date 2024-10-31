@@ -1,4 +1,4 @@
-import { formateDate } from '@/lib/utils'
+import { formatDate } from '@/lib/utils'
 import { EyeIcon } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
@@ -16,7 +16,7 @@ const  StartupCard = ({post}:{post:StartupTypeCard}) => {
       <div className=" flex-between ">
 
         <p className='startup_card_date'>
-          {formateDate(_createdAt)}
+          {formatDate(_createdAt)}
         </p>
 
         <div className='flex gap-1.5'>
