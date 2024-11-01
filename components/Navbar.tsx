@@ -12,14 +12,14 @@ const Navbar = async() => {
       <nav className="flex justify-between items-center ">
 
         <Link href="/">
-        <Image src="/logo.png" alt="logo" width={144} height={30} />
+        <Image src="/logoo.png" alt="logo" width={144} height={10} />
         </Link>
 
         <div className="flex items-center gap-5 text-black">
           {session && session?.user?(
             <>
             <Link href="/startup/create">
-            <span>creat</span>
+            <span>Creat</span>
               </Link>
               <form action={async()=>{
                 "use server";
